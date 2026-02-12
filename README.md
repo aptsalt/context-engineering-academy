@@ -35,18 +35,6 @@ Your engineers learn AI patterns **AND** your product domain. One training budge
 
 ![Homepage](public/screenshots/homepage.png)
 
-### Academy Module Pages
-
-All 6 academies with deep-dive modules, interactive code examples (bad vs. good patterns), anti-patterns, and best practices:
-
-| Context Engineering | Agent Observability | LLM Evals |
-|:---:|:---:|:---:|
-| ![Context Engineering](public/screenshots/academy-context-engineering-academy.png) | ![Agent Observability](public/screenshots/academy-agent-observability-academy.png) | ![LLM Evals](public/screenshots/academy-llm-evals-academy.png) |
-
-| Agentic RAG | Multi-Agent Orchestration | Tool Use & MCP |
-|:---:|:---:|:---:|
-| ![Agentic RAG](public/screenshots/academy-agentic-rag-academy.png) | ![Multi-Agent Orchestration](public/screenshots/academy-multi-agent-orchestration-academy.png) | ![Tool Use & MCP](public/screenshots/academy-tool-use-mcp-academy.png) |
-
 ### Interactive Playgrounds
 
 Toggle context components on/off and watch the agent's response quality change in real-time. Each playground has 3 scenarios, 6 toggleable components, and quality scores from 0-100.

@@ -21,9 +21,11 @@
 # misc
 .DS_Store
 *.pem
-*.png
+
+# images (except screenshots for README)
 *.jpg
 *.jpeg
+/live-site.png
 
 # debug
 npm-debug.log*
@@ -33,6 +35,8 @@ yarn-error.log*
 
 # env files
 .env*
+!.env.example
+!enterprise/.env.example
 
 # vercel
 .vercel

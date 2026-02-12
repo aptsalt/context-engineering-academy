@@ -10,6 +10,12 @@ import {
   ArrowRight,
   Sparkles,
   Play,
+  Building2,
+  GitBranch,
+  Layers,
+  BarChart3,
+  Shield,
+  Zap,
 } from "lucide-react";
 import { academies } from "@/lib/academies";
 
@@ -39,11 +45,11 @@ const badgeColorMap: Record<string, string> = {
 };
 
 const borderColorMap: Record<string, string> = {
-  "chart-1": "border-chart-1/20",
-  "chart-2": "border-chart-2/20",
-  "chart-3": "border-chart-3/20",
-  "chart-4": "border-chart-4/20",
-  "chart-5": "border-chart-5/20",
+  "chart-1": "border-chart-1/25 hover:border-chart-1/45",
+  "chart-2": "border-chart-2/25 hover:border-chart-2/45",
+  "chart-3": "border-chart-3/25 hover:border-chart-3/45",
+  "chart-4": "border-chart-4/25 hover:border-chart-4/45",
+  "chart-5": "border-chart-5/25 hover:border-chart-5/45",
 };
 
 const playgroundBtnMap: Record<string, string> = {
@@ -69,17 +75,25 @@ export default function Home() {
             </span>
           </Link>
           <div className="flex items-center gap-4">
-            <Link
-              href="/#academies"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors hidden sm:block"
-            >
-              Academies
-            </Link>
             <a
               href="#academies"
               className="text-sm text-muted-foreground hover:text-foreground transition-colors hidden sm:block"
             >
-              Playgrounds
+              Academies
+            </a>
+            <a
+              href="#enterprise"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors hidden sm:block"
+            >
+              Enterprise
+            </a>
+            <a
+              href="https://github.com/aptsalt/context-engineering-academy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors hidden sm:block"
+            >
+              GitHub
             </a>
           </div>
         </div>
@@ -141,7 +155,7 @@ export default function Home() {
             {academies.map((academy) => (
               <div
                 key={academy.slug}
-                className={`group relative rounded-2xl border bg-card p-7 transition-all ${borderColorMap[academy.color] ?? "border-border"}`}
+                className={`group relative rounded-2xl border bg-card p-7 shadow-sm hover:shadow-md transition-all duration-200 ${borderColorMap[academy.color] ?? "border-border"}`}
               >
                 {/* Status indicator */}
                 <div className="absolute top-4 right-4">
@@ -206,6 +220,128 @@ export default function Home() {
                 </div>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* Enterprise Section */}
+        <section id="enterprise" className="pb-24 scroll-mt-12">
+          <div className="rounded-3xl border border-primary/15 bg-card shadow-sm p-8 md:p-12">
+            <div className="max-w-3xl">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 mb-4">
+                <Building2 className="w-3.5 h-3.5 text-primary" />
+                <span className="text-xs font-medium text-primary">
+                  Enterprise Edition
+                </span>
+              </div>
+
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-[1.15] mb-3">
+                Your codebase.{" "}
+                <span className="gradient-text">Your examples.</span>
+              </h2>
+
+              <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-2xl">
+                Every enterprise spends separately on AI upskilling and internal
+                onboarding. We merge them. Your engineers learn context
+                engineering, RAG, evals, and agent patterns — using your actual
+                codebase, products, and production incidents as the examples.
+              </p>
+            </div>
+
+            {/* How it works */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+              <div className="rounded-xl border border-border bg-background/50 p-6 space-y-3">
+                <div className="w-10 h-10 rounded-lg bg-chart-1/15 border border-chart-1/25 flex items-center justify-center">
+                  <GitBranch className="w-5 h-5 text-chart-1" />
+                </div>
+                <h3 className="font-bold text-sm">1. Connect Your Repo</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Point the API at your GitHub org, internal docs, support
+                  tickets, and incident reports. We ingest and index everything.
+                </p>
+              </div>
+
+              <div className="rounded-xl border border-border bg-background/50 p-6 space-y-3">
+                <div className="w-10 h-10 rounded-lg bg-chart-2/15 border border-chart-2/25 flex items-center justify-center">
+                  <Layers className="w-5 h-5 text-chart-2" />
+                </div>
+                <h3 className="font-bold text-sm">2. Auto-Contextualize</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Every module&apos;s code examples, playground scenarios, and
+                  anti-patterns are regenerated using your domain. Generic
+                  becomes specific.
+                </p>
+              </div>
+
+              <div className="rounded-xl border border-border bg-background/50 p-6 space-y-3">
+                <div className="w-10 h-10 rounded-lg bg-chart-4/15 border border-chart-4/25 flex items-center justify-center">
+                  <BarChart3 className="w-5 h-5 text-chart-4" />
+                </div>
+                <h3 className="font-bold text-sm">3. Track & Measure</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Dashboard for team progress, skill gaps, and ROI. Your
+                  engineers learn AI patterns AND your product domain
+                  simultaneously.
+                </p>
+              </div>
+            </div>
+
+            {/* Value props */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+              {[
+                {
+                  icon: <Zap className="w-4 h-4" />,
+                  title: "2x ROI",
+                  desc: "One program replaces separate AI training + internal onboarding",
+                },
+                {
+                  icon: <Shield className="w-4 h-4" />,
+                  title: "Self-hosted",
+                  desc: "Your code never leaves your infrastructure",
+                },
+                {
+                  icon: <GitBranch className="w-4 h-4" />,
+                  title: "API-first",
+                  desc: "Embed in your existing LMS or run standalone",
+                },
+                {
+                  icon: <Building2 className="w-4 h-4" />,
+                  title: "Open core",
+                  desc: "Free academy forever. Enterprise features for teams",
+                },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="flex items-start gap-3 rounded-lg border border-border/50 bg-background/30 p-4"
+                >
+                  <div className="mt-0.5 text-primary">{item.icon}</div>
+                  <div>
+                    <p className="text-sm font-semibold">{item.title}</p>
+                    <p className="text-xs text-muted-foreground leading-relaxed mt-0.5">
+                      {item.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* CTA */}
+            <div className="flex flex-wrap gap-3">
+              <a
+                href="https://github.com/aptsalt/context-engineering-academy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors"
+              >
+                Star on GitHub
+                <ArrowRight className="w-4 h-4" />
+              </a>
+              <a
+                href="#academies"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-border text-sm font-medium hover:bg-muted/50 transition-colors"
+              >
+                Try the Free Academy
+              </a>
+            </div>
           </div>
         </section>
 

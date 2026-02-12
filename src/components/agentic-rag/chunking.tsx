@@ -159,10 +159,10 @@ export function Chunking() {
             ensures boundary information appears in at least one complete chunk.
           </p>
           <div className="bg-[#0d1117] rounded-md p-4 font-mono text-xs text-[#e6edf3]/80 leading-relaxed">
-            <div className="text-muted-foreground mb-2">// Without overlap:</div>
+            <div className="text-muted-foreground mb-2">{`// Without overlap:`}</div>
             <div className="text-red-600">Chunk 1: &quot;...The refund policy requires cust&quot;</div>
             <div className="text-red-600">Chunk 2: &quot;omers to submit within 30 days...&quot;</div>
-            <div className="text-muted-foreground mt-3 mb-2">// With 200-char overlap:</div>
+            <div className="text-muted-foreground mt-3 mb-2">{`// With 200-char overlap:`}</div>
             <div className="text-green-600">Chunk 1: &quot;...The refund policy requires customers to submit within 30 days.&quot;</div>
             <div className="text-green-600">Chunk 2: &quot;The refund policy requires customers to submit within 30 days. Digital products...&quot;</div>
           </div>
